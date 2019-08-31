@@ -15,8 +15,6 @@
 #
 
 # Audio
-
-# Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
@@ -42,6 +40,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.dev_name=rmnet_usb0 \
     ro.vendor.use_data_netmgrd=true \
     persist.vendor.data.mode=concurrent
+
+# FM
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.bluetooth.soc=cherokee
+
+# GPS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.overlay.izat.optin=rro
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -81,3 +87,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Asus RIL Hax
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hexedit.manufacturer=unknown
+
+# Expose AUX
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.asus.camera
+
+# Gesture
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dclick.on=1 \
+    persist.screengesture=1

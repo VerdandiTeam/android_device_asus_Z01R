@@ -77,11 +77,14 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    libvulkan
+    libdisplayconfig \
+    libqdMetaData.system \
+    libvulkan \
+    vendor.display.config@1.0
 
 # Doze
 PRODUCT_PACKAGES += \
-    AsusParts \
+    AsusDoze \
     AsusPocketMode
 
 # FM
@@ -95,6 +98,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/fts_ts.kl:system/usr/keylayout/fts_ts.kl \
     $(LOCAL_PATH)/keylayout/goodixfp.kl:system/usr/keylayout/goodixfp.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/gf_input.kl:system/usr/keylayout/gf_input.kl
@@ -131,6 +135,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay
+
 # Power
 PRODUCT_PACKAGES += \
     power.qcom:64
@@ -161,6 +168,10 @@ PRODUCT_BOOT_JARS += \
 # Trust HAL
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
+
+# Touch
+PRODUCT_PACKAGES += \
+    lineage.touch@1.0-service.asus_Z01R
 
 # Update engine
 PRODUCT_PACKAGES += \

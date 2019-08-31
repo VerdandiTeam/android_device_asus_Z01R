@@ -1,9 +1,9 @@
 # Files in rootfs
-/bt_firmware(/.*)?       u:object_r:bt_firmware_file:s0
-/dsp(/.*)?               u:object_r:adsprpcd_file:s0
-/firmware(/.*)?          u:object_r:firmware_file:s0
-/persist(/.*)?           u:object_r:persist_file:s0
-/factory(/.*)?           u:object_r:fac_file:s0
+/ADF(/.*)?		u:object_r:demoapp_file:s0
+/APD(/.*)?		u:object_r:demoapp_file:s0
+/asdf(/.*)?		u:object_r:log_file:s0
+/factory(/.*)?          u:object_r:fac_file:s0
+/xrom(/.*)?		u:object_r:xrom_file:s0
 
 # Audio
 /system/etc/audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0
@@ -14,3 +14,12 @@
 # Power HAL
 /system/lib64/hw/power\.qcom\.so    u:object_r:vendor_file:s0
 /system/lib/hw/power\.qcom\.so      u:object_r:vendor_file:s0
+
+# Trust HAL
+/system/bin/hw/lineage\.trust@1\.0-service                       u:object_r:shal_lineage_trust_default_exec:s0
+
+# Fingerprint related nodes
+/sys/devices/platform/soc/0.goodix_gf5228/proximity_state        u:object_r:sysfs_fp_proximity:s0
+
+# HALs
+/system/bin/hw/lineage\.touch@1\.0-service\.asus_Z01R	u:object_r:hal_lineage_touch_asus_Z01R_exec:s0
